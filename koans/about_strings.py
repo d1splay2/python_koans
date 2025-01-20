@@ -39,9 +39,9 @@ class AboutStrings(Koan):
         self.assertEqual(True, (a == b))
 
     def test_use_backslash_at_the_end_of_a_line_to_continue_onto_the_next_line(self):
-        string = "It was the best of times,\n"\
-                 "\It was the worst of times."
-        self.assertEqual(53, len(string))
+        string = "It was the best of times,\n\
+It was the worst of times."
+        self.assertEqual(52, len(string))
 
     def test_triple_quoted_strings_can_span_lines(self):
         string = """
@@ -67,12 +67,12 @@ world!
         string = "Hello" ", " "world"
         self.assertEqual('Hello, world', string)
 
-    def test_plus_will_not_modify_original_str(hi,there):
+    def test_plus_will_not_modify_original_strings(self):
         hi = "Hello, "
         there = "world"
         string = hi + there
-        self.assertEqual(__, hi)
-        self.assertEqual(__, there)
+        self.assertEqual("Hello, ", hi)
+        self.assertEqual("world", there)
 
     def test_plus_equals_will_append_to_end_of_string(self):
         hi = "Hello, "
